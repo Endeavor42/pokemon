@@ -3,8 +3,6 @@ import { Modal, Button } from "react-bootstrap";
 import uuid from "uuid";
 
 export default function PokeModal({ reveal, close, card }) {
-  const [useMoves, setUseMoves] = useState([]);
-  const ability = card.abilities;
   const { moves } = card;
 
   let storeMoves;

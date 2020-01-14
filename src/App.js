@@ -1,20 +1,17 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PokeModal from "./components/PokeModal";
+import PokeBerry from "./components/PokeBerry";
 
 function App() {
   const [pokedex, setPokedex] = useState([]);
   const [wildPokemon, setWildPokemon] = useState({});
   const [storeCard, setStoreCard] = useState({});
-  const [wildBerry, setWildBerry] = useState({});
-
-  const { abilities } = wildPokemon;
-  const { types } = wildPokemon;
-  const { sprites } = wildPokemon;
+  // const [wildBerry, setWildBerry] = useState({}); // ---
 
   useEffect(() => {
     encounterWildPokemon();
-    berries();
+    // berries();
   }, []);
 
   const pokeId = () => {
@@ -30,33 +27,14 @@ function App() {
     return axios
       .get(`https://pokeapi.co/api/v2/pokemon/${pokeId()}`)
       .then(response => {
-        response.data && setLoading(false);
-        response.data && console.log("Received the data");
+        // response.data && console.log("Received the data");
         setWildPokemon(response.data);
-      });
-  };
-
-  const berryId = () => {
-    const min = Math.ceil(1);
-    const max = Math.floor(64);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  };
-
-  // berries
-  const berries = () => {
-    setLoading(true);
-    return axios
-      .get(`https://pokeapi.co/api/v2/berry/${berryId()}`)
-      .then(response => {
         response.data && setLoading(false);
-        response.data && console.log("Received a berry");
-        setWildBerry(response.data);
-      });
+      })
+      .catch(err => console.log(`Fetch problem: ${err.message}`));
   };
 
   //wildBerry.id && console.log(wildBerry); // MISTAKE: wildBerry is still true. Must be more specific, wildberry.id
-
-  wildBerry.id && console.log(wildBerry);
 
   const catchPokemon = pokemon => {
     setPokedex(state => {
@@ -73,7 +51,7 @@ function App() {
   };
 
   const releasePokemon = id => {
-    setPokedex(state => state.filter(p => p.id != id));
+    setPokedex(state => state.filter(p => p.id !== id));
   };
 
   // PokeModal
@@ -90,6 +68,7 @@ function App() {
     <p>Loading...</p>
   ) : (
     <div className="app-wrapper container">
+      {/* {console.log(wildPokemon)} */}
       <header>
         <h1 className="title">React Hooks</h1>
         <h3 className="subtitle">With Pokémon</h3>
@@ -145,6 +124,7 @@ function App() {
           <PokeModal close={handleClose} reveal={show} card={storeCard} />
         </div>
       </section>
+      <PokeBerry />
     </div>
   );
 }
