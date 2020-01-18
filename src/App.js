@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PokeModal from "./components/PokeModal";
 import PokeBerry from "./components/PokeBerry";
+import { DataContext } from "./components/context/DataContext";
 
 function App() {
   const [pokedex, setPokedex] = useState([]);
   const [wildPokemon, setWildPokemon] = useState({});
   const [storeCard, setStoreCard] = useState({});
+  const [statistics, setStats] = useState(false);
   // const [wildBerry, setWildBerry] = useState({}); // ---
 
   useEffect(() => {
@@ -30,8 +32,7 @@ function App() {
         // response.data && console.log("Received the data");
         setWildPokemon(response.data);
         response.data && setLoading(false);
-      })
-      .catch(err => console.log(`Fetch problem: ${err.message}`));
+      });
   };
 
   //wildBerry.id && console.log(wildBerry); // MISTAKE: wildBerry is still true. Must be more specific, wildberry.id
@@ -61,6 +62,11 @@ function App() {
   const handleShow = pokemon => {
     setShow(true);
     setStoreCard(pokemon);
+    storeCard.id && setStats(true);
+  };
+  const retrieveCard = card => {
+    // console.log("Yes, got it!", card);
+    return card;
   };
 
   // JSX
@@ -121,10 +127,18 @@ function App() {
               </button>
             </div>
           ))}
-          <PokeModal close={handleClose} reveal={show} card={storeCard} />
+
+          <DataContext.Provider value={[storeCard, statistics]}>
+            <PokeModal
+              close={handleClose}
+              reveal={show}
+              card={storeCard}
+              retrieve={retrieveCard}
+            />
+          </DataContext.Provider>
         </div>
       </section>
-      <PokeBerry />
+      {/* <PokeBerry /> */}
     </div>
   );
 }

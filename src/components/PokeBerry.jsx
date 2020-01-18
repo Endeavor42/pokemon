@@ -6,10 +6,10 @@ export default function PokeBerry() {
   const [loading, setLoading] = useState(true);
 
   const { name: berryName } = wildBerry;
-  berryName && console.log(berryName);
   //   const data = useContext(UserContext);
 
   useEffect(() => {
+    berryName && console.log(berryName);
     berries();
   }, []);
 

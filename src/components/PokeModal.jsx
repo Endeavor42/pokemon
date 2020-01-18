@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Modal, Button } from "react-bootstrap";
 import uuid from "uuid";
+import Combat from "./pokemodal/Combat";
 
-export default function PokeModal({ reveal, close, card }) {
+export default function PokeModal({ reveal, close, card, retrieve }) {
   const { moves } = card;
 
   let storeMoves;
@@ -15,7 +16,7 @@ export default function PokeModal({ reveal, close, card }) {
       .filter((move, index) => index < 3)
       .map((move, index) => <li key={uuid()}>{move.move.name}</li>);
 
-    console.log(storeMoves);
+    // console.log(storeMoves);
   }
 
   return (
@@ -40,7 +41,9 @@ export default function PokeModal({ reveal, close, card }) {
               alt=""
             />
           </div>
-          <div className="item2">stats</div>
+          <div className="item2">
+            stats <Combat />
+          </div>
           <div className="item3">
             <p>Progressbar</p>
             <p>{storeMoves}</p>
