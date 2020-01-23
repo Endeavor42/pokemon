@@ -1,22 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Modal, Button } from "react-bootstrap";
 import uuid from "uuid";
 import Combat from "./pokemodal/Combat";
+import { DataContext } from "./context/DataContext";
 
-export default function PokeModal({ reveal, close, card, retrieve }) {
+export default function PokeModal({ reveal, close, card }) {
   const { moves } = card;
+  let [storeCard] = useContext(DataContext);
 
   let storeMoves;
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    // statistics && console.log(storeCard);
+  }, [storeCard]);
 
   // NOTES: we keep changing the state, which causes re-rendering
   if (card.id) {
     storeMoves = moves
       .filter((move, index) => index < 3)
       .map((move, index) => <li key={uuid()}>{move.move.name}</li>);
-
-    // console.log(storeMoves);
   }
 
   return (
@@ -24,6 +26,10 @@ export default function PokeModal({ reveal, close, card, retrieve }) {
       <Modal show={reveal} size="lg" onHide={close} centered>
         <Modal.Header closeButton>
           <Modal.Title>
+            <img
+              src={"https://img.pokemondb.net/sprites/items/master-ball.png"}
+              alt=""
+            />
             <p>
               #{card.id} - {card.name}
             </p>
@@ -33,16 +39,16 @@ export default function PokeModal({ reveal, close, card, retrieve }) {
           <div className="item1">
             <img
               src={
-                "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" +
-                card.id +
-                ".png"
+                "https://img.pokemondb.net/sprites/black-white/anim/normal/" +
+                card.name +
+                ".gif"
               }
               className="sprite"
               alt=""
             />
           </div>
           <div className="item2">
-            stats <Combat />
+            <Combat />
           </div>
           <div className="item3">
             <p>Progressbar</p>
