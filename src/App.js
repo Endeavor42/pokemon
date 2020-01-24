@@ -97,6 +97,12 @@ function App() {
       {/* Pokedex */}
       <section className="pokedex">
         <h2>Pokédex</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nam
+          molestias, porro illo eaque, eligendi adipisci commodi incidunt
+          perferendis iusto hic suscipit quasi harum earum quo magnam unde
+          numquam cupiditate!
+        </p>
         <div className="pokedex-list">
           {pokedex.map(pokemon => (
             <div
