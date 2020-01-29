@@ -16,8 +16,8 @@ function App() {
   }, []);
 
   const pokeId = () => {
-    const min = Math.ceil(200);
-    const max = Math.floor(300);
+    const min = Math.ceil(1);
+    const max = Math.floor(30);
     return Math.floor(Math.random() * (max - min + 1)) + min;
   };
 
@@ -97,12 +97,7 @@ function App() {
       {/* Pokedex */}
       <section className="pokedex">
         <h2>Pokédex</h2>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nam
-          molestias, porro illo eaque, eligendi adipisci commodi incidunt
-          perferendis iusto hic suscipit quasi harum earum quo magnam unde
-          numquam cupiditate!
-        </p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
         <div className="pokedex-list">
           {pokedex.map(pokemon => (
             <div
