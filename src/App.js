@@ -79,7 +79,6 @@ function App() {
       <header>
         <h1 className="title">React Hooks</h1>
         <h3 className="subtitle">With Pokémon</h3>
-        <h1>Lorem Ipsum</h1>
       </header>
       <section className="wild-pokemon">
         <h2>Wild Encounter</h2>
