@@ -225,3 +225,7 @@ li.skills {
   list-style: none;
   padding: 0.25em 0rem;
 }
+
+.progress {
+  width: 100%;
+}

@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Modal, Button, ProgressBar } from "react-bootstrap";
 import uuid from "uuid";
 import Combat from "./pokemodal/Combat";
 import { DataContext } from "./context/DataContext";
 
 export default function PokeModal({ reveal, close, card }) {
+  const [increment, setIncrement] = useState(60);
+
   const { moves } = card;
   let [storeCard] = useContext(DataContext);
 
@@ -33,6 +35,7 @@ export default function PokeModal({ reveal, close, card }) {
             <p>
               #{card.id} - {card.name}
             </p>
+            <ProgressBar now={increment} label={`${increment}`} />
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className="grid-container">
@@ -50,8 +53,13 @@ export default function PokeModal({ reveal, close, card }) {
           <div className="item2">
             <Combat />
           </div>
-          <div className="item3">
+          <div className="item3 w-100">
             <p>Progressbar</p>
+            <ProgressBar
+              variant="length"
+              now={increment}
+              label={`${increment}`}
+            />
             <p>{storeMoves}</p>
           </div>
           <div className="item4">details</div>

@@ -3,11 +3,14 @@ import axios from "axios";
 import PokeModal from "./components/PokeModal";
 import PokeBerry from "./components/PokeBerry";
 import { DataContext } from "./components/context/DataContext";
+import { Spinner } from "react-bootstrap";
 
 function App() {
   const [pokedex, setPokedex] = useState([]);
   const [wildPokemon, setWildPokemon] = useState({});
   const [storeCard, setStoreCard] = useState({});
+  const [increment, setIncrement] = useState(60);
+
   // const [wildBerry, setWildBerry] = useState({}); // ---
 
   useEffect(() => {
@@ -16,8 +19,8 @@ function App() {
   }, []);
 
   const pokeId = () => {
-    const min = Math.ceil(1);
-    const max = Math.floor(30);
+    const min = Math.ceil(150);
+    const max = Math.floor(200);
     return Math.floor(Math.random() * (max - min + 1)) + min;
   };
 
@@ -68,7 +71,7 @@ function App() {
   // JSX
   return loading ? (
     <div className="loading">
-      <h1>Loading...</h1>
+      <Spinner animation="grow" />
     </div>
   ) : (
     <div className="app-wrapper container">
@@ -79,6 +82,7 @@ function App() {
       </header>
       <section className="wild-pokemon">
         <h2>Wild Encounter</h2>
+
         <img
           src={
             "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" +
