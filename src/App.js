@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PokeModal from "./components/PokeModal";
-import PokeBerry from "./components/PokeBerry";
+// import PokeBerry from "./components/PokeBerry";
 import { DataContext } from "./components/context/DataContext";
 import { Spinner } from "react-bootstrap";
 
@@ -9,7 +9,6 @@ function App() {
   const [pokedex, setPokedex] = useState([]);
   const [wildPokemon, setWildPokemon] = useState({});
   const [storeCard, setStoreCard] = useState({});
-  const [increment, setIncrement] = useState(60);
 
   // const [wildBerry, setWildBerry] = useState({}); // ---
 
@@ -19,8 +18,8 @@ function App() {
   }, []);
 
   const pokeId = () => {
-    const min = Math.ceil(150);
-    const max = Math.floor(200);
+    const min = Math.ceil(500);
+    const max = Math.floor(580);
     return Math.floor(Math.random() * (max - min + 1)) + min;
   };
 
@@ -75,7 +74,6 @@ function App() {
     </div>
   ) : (
     <div className="app-wrapper container">
-      {/* {console.log(wildPokemon)} */}
       <header>
         <h1 className="title">React Hooks</h1>
         <h3 className="subtitle">With Pokémon</h3>
@@ -101,7 +99,7 @@ function App() {
       {/* Pokedex */}
       <section className="pokedex">
         <h2>Pokédex</h2>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <p>Gotta catch 'em all</p>
         <div className="pokedex-list">
           {pokedex.map(pokemon => (
             <div

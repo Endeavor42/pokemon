@@ -263,16 +263,19 @@ body .modal-content .grid-container .item2 .skills_container p.skills {
   list-style: none;
   padding: 0.25em 0rem;
   margin-bottom: 0;
+  font-weight: 500;
 }
 
 body .modal-content .grid-container .item2 .skills_container .progress {
-  height: 1em;
+  height: 1.1em;
   width: 60%;
+  background-color: #d3f091c7;
 }
 
 body .modal-content .grid-container .item2 .skills_container .progress-bar {
   background-color: #98d100;
-  color: #707475;
+  color: #575858;
+  font-weight: 500;
 }
 
 body .modal-content .grid-container .item4 {

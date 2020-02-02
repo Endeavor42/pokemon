@@ -6,9 +6,6 @@
   box-sizing: border-box;
 }
 
-$break-small: 360px;
-$break-medium: 990px;
-
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
@@ -196,15 +193,18 @@ body {
             list-style: none;
             padding: 0.25em 0rem;
             margin-bottom: 0;
+            font-weight: 500;
           }
 
           .progress {
-            height: 1em;
+            height: 1.1em;
             width: 60%;
+            background-color: #d3f091c7;
           }
           .progress-bar {
             background-color: #98d100;
             color: $statsColor;
+            font-weight: 500;
           }
         }
       }
