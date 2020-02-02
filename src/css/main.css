@@ -198,7 +198,7 @@ body .app-wrapper .pokedex .pokedex-list .pokemon:hover {
 body .modal-content .grid-container {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "image image stats progressBar progressBar progressBar" "details details details details details details" "profile-left profile-left profile-left profile-right profile-right profile-right";
+      grid-template-areas: "image image stats stats stats stats" "details details details details details details" "profile-left profile-left profile-left profile-right profile-right profile-right";
   grid-gap: 2px;
   background-color: #fff;
 }
@@ -222,16 +222,9 @@ body .modal-content .grid-container .item1 img .item1 img {
 body .modal-content .grid-container .item2 {
   -ms-grid-row: 1;
   -ms-grid-column: 3;
+  -ms-grid-column-span: 4;
   grid-area: stats;
   height: 250px;
-}
-
-body .modal-content .grid-container .item2 li.skills {
-  list-style: none;
-  padding: 0.25em 0rem;
-}
-
-body .modal-content .grid-container .item3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -239,15 +232,47 @@ body .modal-content .grid-container .item3 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-grid-row: 1;
-  -ms-grid-column: 4;
-  -ms-grid-column-span: 3;
-  grid-area: progressBar;
-  height: 250px;
 }
 
-body .modal-content .grid-container .item3 .progress {
-  width: 100%;
+body .modal-content .grid-container .item2 .skills_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+@media screen and (max-width: 990px) {
+  body .modal-content .grid-container .item2 .skills_container {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  body .modal-content .grid-container .item2 .skills_container {
+    width: 100%;
+  }
+}
+
+body .modal-content .grid-container .item2 .skills_container p.skills {
+  list-style: none;
+  padding: 0.25em 0rem;
+  margin-bottom: 0;
+}
+
+body .modal-content .grid-container .item2 .skills_container .progress {
+  height: 1em;
+  width: 60%;
+}
+
+body .modal-content .grid-container .item2 .skills_container .progress-bar {
+  background-color: #98d100;
+  color: #707475;
 }
 
 body .modal-content .grid-container .item4 {

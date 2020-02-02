@@ -35,7 +35,6 @@ export default function PokeModal({ reveal, close, card }) {
             <p>
               #{card.id} - {card.name}
             </p>
-            <ProgressBar now={increment} label={`${increment}`} />
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className="grid-container">
@@ -53,15 +52,14 @@ export default function PokeModal({ reveal, close, card }) {
           <div className="item2">
             <Combat />
           </div>
-          <div className="item3 w-100">
-            <p>Progressbar</p>
+          {/* <div className="item3 w-100">
             <ProgressBar
               variant="length"
               now={increment}
               label={`${increment}`}
             />
             <p>{storeMoves}</p>
-          </div>
+          </div> */}
           <div className="item4">details</div>
           <div className="item5">profile-left</div>
           <div className="item6">profile-right</div>
