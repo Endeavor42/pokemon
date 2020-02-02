@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Modal, Button, ProgressBar } from "react-bootstrap";
+import { Modal, Button } from "react-bootstrap";
 import uuid from "uuid";
 import Combat from "./pokemodal/Combat";
 import { DataContext } from "./context/DataContext";
+import Image from "./pokemodal/Image";
 
 export default function PokeModal({ reveal, close, card }) {
   const { moves } = card;
@@ -26,13 +27,7 @@ export default function PokeModal({ reveal, close, card }) {
       <Modal show={reveal} size="lg" onHide={close} centered>
         <Modal.Header closeButton>
           <Modal.Title>
-            <img
-              src={"https://img.pokemondb.net/sprites/items/master-ball.png"}
-              alt=""
-            />
-            <p>
-              #{card.id} - {card.name}
-            </p>
+            <Image card={card} />
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className="grid-container">

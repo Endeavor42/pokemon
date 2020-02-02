@@ -14,7 +14,6 @@ export default function Combat() {
         <div className="skills_container" key={uuid()}>
           <p className="skills" key={uuid()}>
             {skills.stat.name}
-            {console.log(skills)}
           </p>
           <ProgressBar
             key={uuid()}
