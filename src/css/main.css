@@ -247,13 +247,13 @@ body .modal-content .grid-container .item2 .skills_container {
           align-items: baseline;
 }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 1200px) {
   body .modal-content .grid-container .item2 .skills_container {
     width: 90%;
   }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 990px) {
   body .modal-content .grid-container .item2 .skills_container {
     width: 100%;
   }
@@ -276,6 +276,42 @@ body .modal-content .grid-container .item2 .skills_container .progress-bar {
   background-color: #98d100;
   color: #575858;
   font-weight: 500;
+}
+
+body .modal-content .grid-container .item2 .skills_container:first-child {
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+}
+
+body .modal-content .grid-container .item2 .skills_container:nth-of-type(2) {
+  -webkit-box-ordinal-group: 7;
+      -ms-flex-order: 6;
+          order: 6;
+}
+
+body .modal-content .grid-container .item2 .skills_container:nth-of-type(3) {
+  -webkit-box-ordinal-group: 6;
+      -ms-flex-order: 5;
+          order: 5;
+}
+
+body .modal-content .grid-container .item2 .skills_container:nth-of-type(4) {
+  -webkit-box-ordinal-group: 5;
+      -ms-flex-order: 4;
+          order: 4;
+}
+
+body .modal-content .grid-container .item2 .skills_container:nth-of-type(5) {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+body .modal-content .grid-container .item2 .skills_container:last-child {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
 }
 
 body .modal-content .grid-container .item4 {

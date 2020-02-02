@@ -182,10 +182,10 @@ body {
           width: 80%;
           justify-content: space-between;
           align-items: baseline; // cool!
-          @media screen and (max-width: $break-medium) {
+          @media screen and (max-width: $break-large) {
             width: 90%;
           }
-          @media screen and (max-width: $break-small) {
+          @media screen and (max-width: $break-medium) {
             width: 100%;
           }
 
@@ -205,6 +205,32 @@ body {
             background-color: #98d100;
             color: $statsColor;
             font-weight: 500;
+          }
+
+          &:first-child {
+            // speed
+            order: 3;
+          }
+          &:nth-of-type(2) {
+            // special-defense
+            order: 6;
+          }
+          &:nth-of-type(3) {
+            // special-attack
+            order: 5;
+          }
+          &:nth-of-type(4) {
+            // defense
+            order: 4;
+          }
+          &:nth-of-type(5) {
+            // attack
+            order: 2;
+          }
+
+          &:last-child {
+            // hp
+            order: 1;
           }
         }
       }
