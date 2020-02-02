@@ -5,8 +5,6 @@ import Combat from "./pokemodal/Combat";
 import { DataContext } from "./context/DataContext";
 
 export default function PokeModal({ reveal, close, card }) {
-  const [increment, setIncrement] = useState(60);
-
   const { moves } = card;
   let [storeCard] = useContext(DataContext);
 
@@ -52,14 +50,7 @@ export default function PokeModal({ reveal, close, card }) {
           <div className="item2">
             <Combat />
           </div>
-          {/* <div className="item3 w-100">
-            <ProgressBar
-              variant="length"
-              now={increment}
-              label={`${increment}`}
-            />
-            <p>{storeMoves}</p>
-          </div> */}
+
           <div className="item4">details</div>
           <div className="item5">profile-left</div>
           <div className="item6">profile-right</div>
