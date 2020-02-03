@@ -212,11 +212,13 @@ body .modal-content .grid-container .item1 {
 }
 
 body .modal-content .grid-container .item1 img {
-  max-height: 80px;
+  height: 72px;
 }
 
-body .modal-content .grid-container .item1 img .item1 img {
-  height: 150px;
+@media screen and (max-width: 990px) {
+  body .modal-content .grid-container .item1 img {
+    max-height: 64px;
+  }
 }
 
 body .modal-content .grid-container .item2 {
