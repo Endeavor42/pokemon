@@ -166,7 +166,7 @@ body {
       }
       .item1 img {
         height: 72px;
-
+        // cursor: pointer;
         @media screen and (max-width: $break-medium) {
           max-height: 64px;
         }
