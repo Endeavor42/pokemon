@@ -3,6 +3,7 @@ import { Modal, Button, ProgressBar } from "react-bootstrap";
 import uuid from "uuid";
 import Combat from "./pokemodal/Combat";
 import { DataContext } from "./context/DataContext";
+import ImageModal from "./pokemodal/Image";
 
 export default function PokeModal({ reveal, close, card }) {
   const { moves } = card;
@@ -36,17 +37,8 @@ export default function PokeModal({ reveal, close, card }) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className="grid-container">
-          <div className="item1">
-            <img
-              src={
-                "https://img.pokemondb.net/sprites/black-white/anim/normal/" +
-                card.name +
-                ".gif"
-              }
-              className="sprite"
-              alt=""
-            />
-          </div>
+          <ImageModal card={card} />
+
           <div className="item2">
             <Combat />
           </div>
