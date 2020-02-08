@@ -17,7 +17,7 @@ export default function NavbarComp() {
     <Router>
       <Navbar bg="dark" variant="dark" expand="lg">
         <Navbar.Brand as={Link} to="/">
-          React-Bootstrap
+          Pokemon
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

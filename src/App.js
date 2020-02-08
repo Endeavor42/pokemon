@@ -12,6 +12,11 @@ function App() {
   const [storeCard, setStoreCard] = useState({});
   const [disableSpinner, setDisableSpinner] = useState(true);
 
+  const capName = name => {
+    name = name.charAt().toUpperCase() + name.slice(1);
+    return name;
+  };
+
   // const [wildBerry, setWildBerry] = useState({}); // ---
 
   useEffect(() => {
@@ -73,7 +78,12 @@ function App() {
   return loading ? (
     <>
       <DataContext.Provider
-        value={{ loading, setLoading, disableSpinner, setDisableSpinner }}
+        value={{
+          loading,
+          setLoading,
+          disableSpinner,
+          setDisableSpinner
+        }}
       >
         <NavbarComp />
       </DataContext.Provider>
@@ -83,7 +93,7 @@ function App() {
     </>
   ) : (
     <>
-      {console.log("temp")}
+      {""}
       <DataContext.Provider
         value={{ loading, setLoading, disableSpinner, setDisableSpinner }}
       >
@@ -135,7 +145,7 @@ function App() {
                   className="sprite"
                   alt=""
                 />
-                <h3 className="pokemon-name">{pokemon.name}</h3>
+                <h3 className="pokemon-name">{capName(pokemon.name)}</h3>
                 <button
                   className="remove"
                   onClick={e => {
@@ -148,14 +158,14 @@ function App() {
               </div>
             ))}
 
-            <DataContext.Provider value={[storeCard]}>
+            <DataContext.Provider value={[storeCard, capName]}>
               <PokeModal close={handleClose} reveal={show} card={storeCard} />
             </DataContext.Provider>
           </div>
         </section>
         {/* <PokeBerry /> */}
       </div>
-      <div className="div_padding"></div>
+      {/* <div className="div_padding"></div> */}
     </>
   );
 }

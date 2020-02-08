@@ -4,7 +4,7 @@ import { ProgressBar } from "react-bootstrap";
 import uuid from "uuid";
 
 export default function Combat() {
-  const [storeCard] = useContext(DataContext);
+  const [storeCard, pokeName] = useContext(DataContext);
 
   useEffect(() => {}, []);
 
@@ -13,7 +13,7 @@ export default function Combat() {
       {storeCard.stats.map((skills, index) => (
         <div className="skills_container" key={uuid()}>
           <p className="skills" key={uuid()}>
-            {skills.stat.name}
+            {pokeName(skills.stat.name)}
           </p>
           <ProgressBar
             key={uuid()}

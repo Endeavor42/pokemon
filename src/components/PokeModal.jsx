@@ -7,7 +7,7 @@ import ImageModal from "./pokemodal/Image";
 
 export default function PokeModal({ reveal, close, card }) {
   const { moves } = card;
-  let [storeCard] = useContext(DataContext);
+  const [storeCard, capName] = useContext(DataContext);
 
   let storeMoves;
 
@@ -32,7 +32,7 @@ export default function PokeModal({ reveal, close, card }) {
               alt=""
             />
             <p>
-              #{card.id} - {card.name}
+              #{card.id} - {reveal && capName(card.name)}
             </p>
           </Modal.Title>
         </Modal.Header>
