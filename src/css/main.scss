@@ -20,6 +20,10 @@ body {
     align-items: center;
   }
 
+  .div_padding {
+    padding: $padding;
+  }
+
   .app-wrapper {
     width: 100%;
     height: 95vh;
