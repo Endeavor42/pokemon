@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import PokeModal from "./components/PokeModal";
 // import PokeBerry from "./components/PokeBerry";
 import { DataContext } from "./components/context/DataContext";
 import { Spinner } from "react-bootstrap";
 import NavbarComp from "./components/navbar/NavbarComp";
+import PokeHeader from "./components/Home/PokeHeader";
+import PokedexHome from "./components/Home/PokedexHome";
 
 function App() {
   const [pokedex, setPokedex] = useState([]);
@@ -100,72 +101,22 @@ function App() {
         <NavbarComp />
       </DataContext.Provider>
       <div className="app-wrapper container">
-        <header>
-          <h1 className="title">React Hooks</h1>
-          <h3 className="subtitle">With Pokémon</h3>
-        </header>
-        <section className="wild-pokemon">
-          <h2>Wild Encounter</h2>
-
-          <img
-            src={
-              "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" +
-              wildPokemon.id +
-              ".png"
-            }
-            className="sprite"
-            alt=""
-          />
-          <h3>{wildPokemon.name}</h3>
-          <button
-            className="catch-btn"
-            onClick={() => catchPokemon(wildPokemon)}
-          >
-            CATCH
-          </button>
-        </section>
-
+        <PokeHeader wildPokemon={wildPokemon} catchPokemon={catchPokemon} />
         {/* Pokedex */}
-        <section className="pokedex">
-          <h2>Pokédex</h2>
-          <p>Gotta catch 'em all</p>
-          <div className="pokedex-list">
-            {pokedex.map(pokemon => (
-              <div
-                className="pokemon"
-                key={pokemon.id}
-                onClick={() => handleShow(pokemon)}
-              >
-                <img
-                  src={
-                    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" +
-                    pokemon.id +
-                    ".png"
-                  }
-                  className="sprite"
-                  alt=""
-                />
-                <h3 className="pokemon-name">{capName(pokemon.name)}</h3>
-                <button
-                  className="remove"
-                  onClick={e => {
-                    releasePokemon(pokemon.id);
-                    e.stopPropagation();
-                  }}
-                >
-                  &times;
-                </button>
-              </div>
-            ))}
+        <DataContext.Provider value={[storeCard, capName]}>
+          <PokedexHome
+            pokedex={pokedex}
+            handleShow={handleShow}
+            capName={capName}
+            releasePokemon={releasePokemon}
+            storeCard={storeCard}
+            handleClose={handleClose}
+            show={show}
+          />
+        </DataContext.Provider>
 
-            <DataContext.Provider value={[storeCard, capName]}>
-              <PokeModal close={handleClose} reveal={show} card={storeCard} />
-            </DataContext.Provider>
-          </div>
-        </section>
         {/* <PokeBerry /> */}
       </div>
-      {/* <div className="div_padding"></div> */}
     </>
   );
 }
