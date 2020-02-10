@@ -6,6 +6,7 @@ import { Spinner } from "react-bootstrap";
 import NavbarComp from "./components/navbar/NavbarComp";
 import PokeHeader from "./components/Home/PokeHeader";
 import PokedexHome from "./components/Home/PokedexHome";
+import CardFadeContainer from "./components/Home/CardF/CardFadeContainer";
 
 function App() {
   const [pokedex, setPokedex] = useState([]);
@@ -114,9 +115,10 @@ function App() {
             show={show}
           />
         </DataContext.Provider>
-
-        {/* <PokeBerry /> */}
       </div>
+      <div style={{ padding: "20px" }}></div>
+      <CardFadeContainer />
+      <div style={{ padding: "100px" }}></div>
     </>
   );
 }
