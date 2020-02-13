@@ -60,7 +60,7 @@ export default function CardFade() {
           />
         </a>
         <Typography variant="body2" component="p">
-          an immensely powerful Pokémon
+          An immensely powerful Pokémon
           <br />
         </Typography>
       </CardContent>
