@@ -29,31 +29,43 @@ export default function CardFade() {
   const styles = {
     width: "20%"
   };
+  const format = {
+    display: "flex",
+    flexFlow: "column",
+    justifyContent: "center",
+    alignItems: "center"
+  };
 
   return (
     <Card style={styles} className={classes.root}>
-      <CardContent>
+      <CardContent style={format}>
         <Typography
           className={classes.title}
           onClick={() => console.log(window.innerHeight)}
           color="textSecondary"
           gutterBottom
         >
-          Word of the Day
+          Legendary Pokemon
         </Typography>
         <Typography variant="h5" component="h2">
-          be{bull}nev{bull}o{bull}lent
+          Groudon
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          adjective
+          Fire
         </Typography>
+        <a href="http://pokemondb.net/pokedex/groudon">
+          <img
+            src="https://img.pokemondb.net/sprites/black-white/anim/normal/groudon.gif"
+            alt="Groudon"
+          />
+        </a>
         <Typography variant="body2" component="p">
-          well meaning and kindly.
+          an immensely powerful Pokémon
           <br />
-          {'"a benevolent smile"'}
         </Typography>
       </CardContent>
-      <CardActions>
+
+      <CardActions style={format}>
         <Button onClick={() => console.log(window.innerHeight)} size="small">
           Learn More
         </Button>

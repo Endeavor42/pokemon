@@ -118,7 +118,7 @@ function App() {
       </div>
       <div style={{ padding: "20px" }}></div>
       <CardFadeContainer />
-      <div style={{ padding: "100px" }}></div>
+      <div className="spacing outer"></div>
     </>
   );
 }

@@ -3,11 +3,11 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 body {
   margin: 0;
-  font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f7d7cf;
@@ -42,6 +42,7 @@ body .app-wrapper {
 }
 
 body .app-wrapper header {
+  font-family: "Nunito Black";
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -355,5 +356,11 @@ body .modal-content .grid-container > div {
   text-align: center;
   padding: 20px 0;
   background-color: #e6e4e4;
+}
+
+body .outer {
+  background: url("../images/Group 2@2x.png") no-repeat;
+  padding: 150px;
+  margin-top: 4rem;
 }
 /*# sourceMappingURL=main.css.map */
