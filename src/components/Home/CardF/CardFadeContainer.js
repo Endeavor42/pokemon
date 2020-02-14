@@ -1,6 +1,8 @@
 import React, { useState, useRef, useLayoutEffect } from "react";
 import Fade from "react-reveal/Fade";
-import CardFade from "./CardFade";
+import CardGroudon from "./CardGroudon";
+import CardRayqueza from "./CardRayqueza";
+import CardKayogre from "./CardKayogre";
 
 export default function CardFadeContainer() {
   const [bool, setBool] = useState(false);
@@ -11,20 +13,17 @@ export default function CardFadeContainer() {
 
   const inputRef = useRef();
 
-  useLayoutEffect(() => {
-    console.log(inputRef.current.getBoundingClientRect());
-  }, [bool]);
   return (
     <Fade cascade bottom>
-      <div style={container}>
+      <div className="cardFadeContainer" style={container}>
+        <div>
+          <CardRayqueza bool={false} />
+        </div>
         <div ref={inputRef}>
-          <CardFade bool={false} />
+          <CardGroudon bool={false} />
         </div>
         <div>
-          <CardFade bool={false} />
-        </div>
-        <div>
-          <CardFade bool={false} />
+          <CardKayogre bool={false} />
         </div>
       </div>
     </Fade>

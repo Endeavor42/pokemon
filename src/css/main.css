@@ -358,6 +358,21 @@ body .modal-content .grid-container > div {
   background-color: #e6e4e4;
 }
 
+body .cardFadeContainer {
+  display: "flex";
+  -webkit-box-pack: "space-evenly";
+      -ms-flex-pack: "space-evenly";
+          justify-content: "space-evenly";
+}
+
+body .cardFadeContainer img {
+  margin-bottom: 1em;
+}
+
+body .cardFadeContainer .rayquaza img {
+  max-height: 5.2em;
+}
+
 body .outer {
   background: url("../images/Group 2@2x.png") no-repeat;
   padding: 150px;

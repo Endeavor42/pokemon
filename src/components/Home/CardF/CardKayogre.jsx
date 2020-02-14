@@ -48,15 +48,15 @@ export default function CardFade() {
           Legendary Pokemon
         </Typography>
         <Typography variant="h5" component="h2">
-          Groudon
+          Kyogre
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          Fire
+          Water
         </Typography>
-        <a href="http://pokemondb.net/pokedex/groudon">
+        <a href="http://pokemondb.net/pokedex/Kyogre">
           <img
-            src="https://img.pokemondb.net/sprites/black-white/anim/normal/groudon.gif"
-            alt="Groudon"
+            src="https://img.pokemondb.net/sprites/black-white/anim/normal/kyogre.gif"
+            alt="kyogre"
           />
         </a>
         <Typography variant="body2" component="p">

@@ -242,6 +242,18 @@ body {
     }
   }
 
+  .cardFadeContainer {
+    display: "flex";
+    justify-content: "space-evenly";
+
+    img {
+      margin-bottom: 1em;
+    }
+
+    .rayquaza img {
+      max-height: 5.2em;
+    }
+  }
   .outer {
     background: url("../images/Group\ 2@2x.png") no-repeat;
     padding: $spacing * 1.5;
