@@ -10,7 +10,7 @@ export default function TypesOfPokemon() {
         </Card.Body>
         <hr></hr>
         <Card.Body>
-          <p> 60 </p>
+          <p> 30 </p>
         </Card.Body>
       </Card>
       <Card className="water box" style={{ width: "18rem" }}>
@@ -19,7 +19,7 @@ export default function TypesOfPokemon() {
         </Card.Body>
         <hr></hr>
         <Card.Body>
-          <p> 60 </p>
+          <p> 25 </p>
         </Card.Body>
       </Card>
       <Card className="flying box" style={{ width: "18rem" }}>
@@ -28,7 +28,7 @@ export default function TypesOfPokemon() {
         </Card.Body>
         <hr></hr>
         <Card.Body>
-          <p> 60 </p>
+          <p> 6 </p>
         </Card.Body>
       </Card>
       <Card className="leaf box" style={{ width: "18rem" }}>
@@ -37,7 +37,7 @@ export default function TypesOfPokemon() {
         </Card.Body>
         <hr></hr>
         <Card.Body>
-          <p> 60 </p>
+          <p> 17 </p>
         </Card.Body>
       </Card>
     </div>
