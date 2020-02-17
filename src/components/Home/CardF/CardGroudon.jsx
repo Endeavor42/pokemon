@@ -37,39 +37,41 @@ export default function CardFade() {
   };
 
   return (
-    <Card style={styles} className={classes.root}>
-      <CardContent style={format}>
-        <Typography
-          className={classes.title}
-          onClick={() => console.log(window.innerHeight)}
-          color="textSecondary"
-          gutterBottom
-        >
-          Legendary Pokemon
-        </Typography>
-        <Typography variant="h5" component="h2">
-          Groudon
-        </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-          Ground
-        </Typography>
-        <a href="http://pokemondb.net/pokedex/groudon">
-          <img
-            src="https://img.pokemondb.net/sprites/black-white/anim/normal/groudon.gif"
-            alt="Groudon"
-          />
-        </a>
-        <Typography variant="body2" component="p">
-          An immensely powerful Pokémon
-          <br />
-        </Typography>
-      </CardContent>
+    <div className="groudon">
+      <Card style={styles} className={classes.root}>
+        <CardContent style={format}>
+          <Typography
+            className={classes.title}
+            onClick={() => console.log(window.innerHeight)}
+            color="textSecondary"
+            gutterBottom
+          >
+            Legendary Pokemon
+          </Typography>
+          <Typography variant="h5" component="h2">
+            Groudon
+          </Typography>
+          <Typography className={classes.pos} color="textSecondary">
+            Ground
+          </Typography>
+          <a href="http://pokemondb.net/pokedex/groudon">
+            <img
+              src="https://img.pokemondb.net/sprites/black-white/anim/normal/groudon.gif"
+              alt="Groudon"
+            />
+          </a>
+          <Typography variant="body2" component="p">
+            An immensely powerful Pokémon
+            <br />
+          </Typography>
+        </CardContent>
 
-      <CardActions style={format}>
-        <Button onClick={() => console.log(window.innerHeight)} size="small">
-          Learn More
-        </Button>
-      </CardActions>
-    </Card>
+        <CardActions style={format}>
+          <Button onClick={() => console.log(window.innerHeight)} size="small">
+            Learn More
+          </Button>
+        </CardActions>
+      </Card>
+    </div>
   );
 }
