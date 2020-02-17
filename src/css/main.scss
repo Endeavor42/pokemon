@@ -256,7 +256,57 @@ body {
   }
   .outer {
     background: url("../images/Group\ 2@2x.png") no-repeat;
-    padding: $spacing * 1.5;
     margin-top: 4rem;
+    padding: $spacing * 1.5;
+
+    .type-container {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 150px;
+    }
+    .box {
+      color: eee;
+      border: none;
+      text-align: center;
+      & > hr {
+        margin: 0;
+      }
+
+      &:nth-child(1) {
+        .card-body:first-child {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: none;
+        }
+        p {
+          margin-bottom: 0.6rem;
+        }
+      }
+    }
+    .ground {
+      .header {
+        background-color: #cc8878;
+      }
+      background-color: #eebeb3;
+    }
+    .water {
+      .header {
+        background-color: #73b0e3;
+      }
+      background-color: #a1d0f6;
+    }
+    .flying {
+      .header {
+        background-color: #d9a2d6;
+      }
+      background-color: #edbdea;
+    }
+    .leaf {
+      .header {
+        background-color: #a3f7b5;
+      }
+      background-color: #e5f9e0;
+    }
   }
 }

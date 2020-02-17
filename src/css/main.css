@@ -375,7 +375,75 @@ body .cardFadeContainer .rayquaza img {
 
 body .outer {
   background: url("../images/Group 2@2x.png") no-repeat;
-  padding: 150px;
   margin-top: 4rem;
+  padding: 150px;
+}
+
+body .outer .type-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 150px;
+}
+
+body .outer .box {
+  color: eee;
+  border: none;
+  text-align: center;
+}
+
+body .outer .box > hr {
+  margin: 0;
+}
+
+body .outer .box:nth-child(1) .card-body:first-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: none;
+}
+
+body .outer .box:nth-child(1) p {
+  margin-bottom: 0.6rem;
+}
+
+body .outer .ground {
+  background-color: #eebeb3;
+}
+
+body .outer .ground .header {
+  background-color: #cc8878;
+}
+
+body .outer .water {
+  background-color: #a1d0f6;
+}
+
+body .outer .water .header {
+  background-color: #73b0e3;
+}
+
+body .outer .flying {
+  background-color: #edbdea;
+}
+
+body .outer .flying .header {
+  background-color: #d9a2d6;
+}
+
+body .outer .leaf {
+  background-color: #e5f9e0;
+}
+
+body .outer .leaf .header {
+  background-color: #a3f7b5;
 }
 /*# sourceMappingURL=main.css.map */

@@ -7,6 +7,7 @@ import NavbarComp from "./components/navbar/NavbarComp";
 import PokeHeader from "./components/Home/PokeHeader";
 import PokedexHome from "./components/Home/PokedexHome";
 import CardFadeContainer from "./components/Home/CardF/CardFadeContainer";
+import TypesOfPokemon from "./components/Home/TypesOfPokemon/TypesOfPokemon";
 
 function App() {
   const [pokedex, setPokedex] = useState([]);
@@ -118,7 +119,9 @@ function App() {
       </div>
       <div style={{ padding: "20px" }}></div>
       <CardFadeContainer />
-      <div className="spacing outer"></div>
+      <div className="spacing outer">
+        <TypesOfPokemon />
+      </div>
     </>
   );
 }
