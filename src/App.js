@@ -8,12 +8,25 @@ import PokeHeader from "./components/Home/PokeHeader";
 import PokedexHome from "./components/Home/PokedexHome";
 import CardFadeContainer from "./components/Home/CardF/CardFadeContainer";
 import TypesOfPokemon from "./components/Home/TypesOfPokemon/TypesOfPokemon";
+import SideDrawer from "./components/Home/SideDrawer";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core";
+import red from "@material-ui/core/colors/red";
+
+const theme = createMuiTheme({
+  palette: {
+    primary: red
+  }
+});
 
 function App() {
   const [pokedex, setPokedex] = useState([]);
   const [wildPokemon, setWildPokemon] = useState({});
   const [storeCard, setStoreCard] = useState({});
   const [disableSpinner, setDisableSpinner] = useState(true);
+  const [ground, setGround] = useState(0);
+  const [water, setWater] = useState(0);
+  const [flying, setFlying] = useState(0);
+  const [leaf, setLeaf] = useState(0);
 
   const capName = name => {
     name = name.charAt().toUpperCase() + name.slice(1);
@@ -77,6 +90,10 @@ function App() {
     console.log("retrieved card");
   };
 
+  useEffect(() => {
+    setGround(ground + 1);
+  }, [pokedex]);
+
   // JSX
   return loading ? (
     <>
@@ -89,6 +106,9 @@ function App() {
         }}
       >
         <NavbarComp />
+        <MuiThemeProvider theme={theme}>
+          <SideDrawer />
+        </MuiThemeProvider>
       </DataContext.Provider>
       <div className="loading">
         {disableSpinner && <Spinner animation="grow" />}
@@ -101,6 +121,9 @@ function App() {
         value={{ loading, setLoading, disableSpinner, setDisableSpinner }}
       >
         <NavbarComp />
+        <MuiThemeProvider theme={theme}>
+          <SideDrawer />
+        </MuiThemeProvider>
       </DataContext.Provider>
       <div className="app-wrapper container">
         <PokeHeader wildPokemon={wildPokemon} catchPokemon={catchPokemon} />
@@ -120,7 +143,7 @@ function App() {
       <div style={{ padding: "20px" }}></div>
       <CardFadeContainer />
       <div className="spacing outer">
-        <TypesOfPokemon />
+        <TypesOfPokemon pokedex={pokedex} />
       </div>
     </>
   );

@@ -419,7 +419,7 @@ body .outer .box:nth-child(1) .card-body:first-child {
   margin: none;
 }
 
-body .outer .box:nth-child(1) p {
+body .outer .box p {
   margin-bottom: 0.6rem;
 }
 
