@@ -7,45 +7,50 @@ export default function TypesOfPokemon({ pokedex }) {
   const [flying, setFlying] = useState(0);
   const [leaf, setLeaf] = useState(0);
   useEffect(() => {
-    pokedex[0] &&
-      setGround(
-        pokedex
-          .map(item => item.types[0].type.name)
-          .filter(
-            item =>
-              item === "ground" ||
-              item === "rock" ||
-              item === "fire" ||
-              item === "steel"
-          ).length
+    let g = pokedex
+      .map(item => item.types[0].type.name)
+      .filter(
+        item =>
+          item === "ground" ||
+          item === "rock" ||
+          item === "fire" ||
+          item === "steel"
       );
-    pokedex[0] &&
-      setWater(
-        pokedex
-          .map(item => item.types[0].type.name)
-          .filter(item => item === "water" || item === "ice").length
+    let w = pokedex
+      .map(item => item.types[0].type.name)
+      .filter(item => item === "water" || item === "ice");
+
+    let f = pokedex
+      .map(item => item.types[0].type.name)
+      .filter(
+        item => item === "flying" || item === "dragon" || item === "fairy"
       );
-    pokedex[0] &&
-      setFlying(
-        pokedex
-          .map(item => item.types[0].type.name)
-          .filter(
-            item => item === "flying" || item === "dragon" || item === "fairy"
-          ).length
-      );
-    pokedex[0] &&
-      setLeaf(
-        pokedex
-          .map(item => item.types[0].type.name)
-          .filter(
-            item => item === "grass" || item === "bug" || item === "poison"
-          ).length
-      );
+    let l = pokedex
+      .map(item => item.types[0].type.name)
+      .filter(item => item === "grass" || item === "bug" || item === "poison");
+    pokedex[0] && setGround(g.length);
+    pokedex[0] && setWater(w.length);
+    pokedex[0] && setFlying(f.length);
+    pokedex[0] && setLeaf(l.length);
     pokedex[0] && console.log(pokedex.map(item => item.types[0].type.name));
+  }, [pokedex]);
+
+  useEffect(() => {
+    if (pokedex.length === 0) {
+      // console.log("You have no pokemon");
+      setGround(0);
+      setWater(0);
+      setFlying(0);
+      setLeaf(0);
+    }
   }, [pokedex]);
   return (
     <div className="type-container">
-      <Card className="ground box" style={{ width: "18rem" }}>
+      <Card
+        onMouseEnter={() => console.log(ground)}
+        className="ground box"
+        style={{ width: "18rem" }}
+      >
         <Card.Body className="header">
           <p className="h5">Ground</p>
         </Card.Body>

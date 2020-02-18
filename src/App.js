@@ -23,10 +23,6 @@ function App() {
   const [wildPokemon, setWildPokemon] = useState({});
   const [storeCard, setStoreCard] = useState({});
   const [disableSpinner, setDisableSpinner] = useState(true);
-  const [ground, setGround] = useState(0);
-  const [water, setWater] = useState(0);
-  const [flying, setFlying] = useState(0);
-  const [leaf, setLeaf] = useState(0);
 
   const capName = name => {
     name = name.charAt().toUpperCase() + name.slice(1);
@@ -89,10 +85,6 @@ function App() {
     setStoreCard(pokemon);
     console.log("retrieved card");
   };
-
-  useEffect(() => {
-    setGround(ground + 1);
-  }, [pokedex]);
 
   // JSX
   return loading ? (
